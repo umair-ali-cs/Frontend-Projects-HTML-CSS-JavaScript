@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="shortcut icon" href="Assets/Images/favIcon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="container">
+        <img src="Assets/Images/Header_Logo.png" class="logo">
+        <div class="search">
+            <div class="homeButton">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" class="homeImg" viewBox="0 0 24 24">
+                    <path
+                        d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z">
+                    </path>
+                </svg>
+            </div>
+            <div class="searchbar">
+                <div class="Img">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" data-testid="search-icon"
+                        viewBox="0 0 24 24" fill="white" width="21" height="21">
+                        <path
+                            d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="textBox">
+                    <input type="text" id="SearchInput" placeholder="What do you want to play?">
+                </div>
+                <div class="bar"></div>
+                <div class="Img">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" fill="white" width="24"
+                        height="24">
+                        <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2"></path>
+                        <path
+                            d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="leftSideBtns">Premium</button>
+            <button class="leftSideBtns">Support</button>
+            <button class="leftSideBtns">Download</button>
+            <button id="bar">|</button>
+            <button id="signUp">Sign up</button>
+            <button id="Login">Log in</button>
+        </div>
+    </header>
+    <main>
+        <section class="MainLeft">
+            <div class="LeftCon">
+                <div class="head">
+                    <div class="heading">
+                        <h2>Library</h2>
+                        <div class="img">
+                            <img src="Assets/Images/plus.svg">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Create your first Playlist</h3>
+                        <p>It's easy we'll help you</p>
+                        <button>
+                            <h3>
+                                Create playlist
+                            </h3>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <h3>Let's find some podcasts to follow</h3>
+                        <p>we'll keep you updated on new episodes</p>
+                        <button>
+                            <h3>
+                                Browse podcasts
+                            </h3>
+                        </button>
+                    </div>
+                </div>
+                <div class="foot">
+                    <ul>
+                        <li>Legal</li>
+                        <li>Safety & privacy Center</li>
+                        <li>Privacy Policy</li>
+                        <li>Cookies</li>
+                        <li>About Ads</li>
+                        <li>Accessibility</li>
+                    </ul>
+                    <h4>Cookies</h4>
+                    <button class="button">
+                        <img src="Assets/Images/Lang.svg">
+                        <h4>English</h4>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="MainRight">
+            <div class="content"></div>
+            <hr class="sectionBreak">
+            <div class="links">
+                <div class="pageLinks">
+                    <div class="list">
+                        <h2>Company</h2>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <h2>Company</h2>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <h2>Company</h2>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <h2>Company</h2>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem, ipsum.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="platFormLinks">
+                    <div><img
+                            src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png"
+                            alt=""></div>
+                    <div><img src="Assets/Images/twitterBtn.png" alt=""></div>
+                    <div><img
+                            src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png"
+                            alt=""></div>
+                </div>
+            </div>
+            <hr class="sectionBreak">
+            <div class="copyright">
+                &copy 2025 Spotify AB
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="text">
+            <h5>Preview of Spotify</h5>
+            <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+        </div>
+        <div class="button">
+            <button>Sign up free</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
