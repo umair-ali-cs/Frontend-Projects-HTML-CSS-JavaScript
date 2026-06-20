@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisualMath – Professional Graphing Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Math.js for expression evaluation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+  </head>
+
+  <body>
+    <!-- Splash Screen -->
+    <div id="splash">
+      <div class="splash-icon">📐</div>
+      <div class="splash-title">VisualMath</div>
+      <div class="splash-sub">Professional 2D Graphing Calculator</div>
+      <button class="splash-btn" onclick="openApp()">Launch Calculator</button>
+    </div>
+
+    <!-- Main App -->
+    <div id="app">
+      <!-- Left Panel -->
+      <div id="panel">
+        <div class="panel-header">
+          <span class="panel-title">Equations</span>
+
+          <button id="add-btn" title="Add Equation" onclick="addEquation()">
+            +
+          </button>
+        </div>
+
+        <div id="equations-list"></div>
+
+        <div class="panel-tools">
+          <div class="tool-row">
+            <button class="tool-btn" onclick="resetView()">Reset View</button>
+            <button
+              class="tool-btn active"
+              id="crosshair-btn"
+              onclick="toggleCrosshair()"
+            >
+              Crosshair
+            </button>
+          </div>
+          <div class="tool-row">
+            <button class="tool-btn" onclick="exportPNG()">Export PNG</button>
+            <button
+              class="tool-btn"
+              id="deriv-btn"
+              onclick="toggleDerivatives()"
+            >
+              Show f′(x)
+            </button>
+          </div>
+          <div class="tool-row">
+            <button class="tool-btn danger" onclick="clearAll()">
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <div id="coords-display">
+          <span id="coord-xy">x: —, y: —</span>
+          <span id="zoom-level">zoom: 1.00×</span>
+        </div>
+      </div>
+
+      <!-- Right Canvas -->
+      <div id="canvas-wrap">
+        <canvas id="graph"></canvas>
+        <div id="zoom-btns">
+          <button class="zoom-btn" onclick="zoom(1.2)" title="Zoom In">
+            +
+          </button>
+          <button class="zoom-btn" onclick="zoom(0.83)" title="Zoom Out">
+            −
+          </button>
+        </div>
+        <div id="tooltip"></div>
+      </div>
+    </div>
+
+    <!-- Overlays -->
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
