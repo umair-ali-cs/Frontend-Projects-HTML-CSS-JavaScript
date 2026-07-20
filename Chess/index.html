@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Master</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="game-header">
+        <div class="logo">
+          <span class="logo-icon">♚</span>
+          <h1>Chess Master</h1>
+        </div>
+        <div class="header-center">
+          <div class="player-indicator white-player active" id="whiteIndicator">
+            <span class="player-dot"></span><span>White</span>
+          </div>
+          <span class="vs-divider">VS</span>
+          <div class="player-indicator black-player" id="blackIndicator">
+            <span class="player-dot"></span><span>Black</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="move-counter">
+            <span class="counter-label">Move</span>
+            <span class="counter-value" id="moveCount">1</span>
+          </div>
+          <div class="status-badge" id="statusBadge">Playing</div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Board -->
+        <div class="board-container">
+          <div class="board-wrapper">
+            <div class="board" id="chessBoard">
+              <!-- Row 8 -->
+              <div class="cell black" id="a8">
+                <div class="row">8</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="b8">
+                <div class="row">8</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="c8">
+                <div class="row">8</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="d8">
+                <div class="row">8</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="e8">
+                <div class="row">8</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="f8">
+                <div class="row">8</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="g8">
+                <div class="row">8</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="h8">
+                <div class="row">8</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 7 -->
+              <div class="cell white" id="a7">
+                <div class="row">7</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="b7">
+                <div class="row">7</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="c7">
+                <div class="row">7</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="d7">
+                <div class="row">7</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="e7">
+                <div class="row">7</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="f7">
+                <div class="row">7</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="g7">
+                <div class="row">7</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="h7">
+                <div class="row">7</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 6 -->
+              <div class="cell black" id="a6">
+                <div class="row">6</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="b6">
+                <div class="row">6</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="c6">
+                <div class="row">6</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="d6">
+                <div class="row">6</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="e6">
+                <div class="row">6</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="f6">
+                <div class="row">6</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="g6">
+                <div class="row">6</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="h6">
+                <div class="row">6</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 5 -->
+              <div class="cell white" id="a5">
+                <div class="row">5</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="b5">
+                <div class="row">5</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="c5">
+                <div class="row">5</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="d5">
+                <div class="row">5</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="e5">
+                <div class="row">5</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="f5">
+                <div class="row">5</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="g5">
+                <div class="row">5</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="h5">
+                <div class="row">5</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="cell black" id="a4">
+                <div class="row">4</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="b4">
+                <div class="row">4</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="c4">
+                <div class="row">4</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="d4">
+                <div class="row">4</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="e4">
+                <div class="row">4</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="f4">
+                <div class="row">4</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="g4">
+                <div class="row">4</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="h4">
+                <div class="row">4</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="cell white" id="a3">
+                <div class="row">3</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="b3">
+                <div class="row">3</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="c3">
+                <div class="row">3</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="d3">
+                <div class="row">3</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="e3">
+                <div class="row">3</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="f3">
+                <div class="row">3</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="g3">
+                <div class="row">3</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="h3">
+                <div class="row">3</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="cell black" id="a2">
+                <div class="row">2</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="b2">
+                <div class="row">2</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="c2">
+                <div class="row">2</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="d2">
+                <div class="row">2</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="e2">
+                <div class="row">2</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="f2">
+                <div class="row">2</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="g2">
+                <div class="row">2</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="h2">
+                <div class="row">2</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+
+              <!-- Row 1 -->
+              <div class="cell white" id="a1">
+                <div class="row">1</div>
+                <div class="col">a</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="b1">
+                <div class="row">1</div>
+                <div class="col">b</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="c1">
+                <div class="row">1</div>
+                <div class="col">c</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="d1">
+                <div class="row">1</div>
+                <div class="col">d</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="e1">
+                <div class="row">1</div>
+                <div class="col">e</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="f1">
+                <div class="row">1</div>
+                <div class="col">f</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell white" id="g1">
+                <div class="row">1</div>
+                <div class="col">g</div>
+                <div class="Cursor"></div>
+              </div>
+              <div class="cell black" id="h1">
+                <div class="row">1</div>
+                <div class="col">h</div>
+                <div class="Cursor"></div>
+              </div>
+            </div>
+          </div>
+          <div class="board-controls">
+            <button class="control-btn" id="undoBtn">
+              <span class="btn-icon">&#8630;</span> Undo
+            </button>
+            <button class="control-btn" id="flipBtn">
+              <span class="btn-icon">&#8646;</span> Flip
+            </button>
+            <button class="control-btn" id="newGameBtn">
+              <span class="btn-icon">&#9823;</span> New Game
+            </button>
+            <button class="control-btn" id="settingsBtn">
+              <span class="btn-icon">&#9881;</span> Settings
+            </button>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="panel captured-panel">
+            <h3 class="panel-title">Captured</h3>
+            <div class="captured-section white-captured">
+              <div class="section-header">White</div>
+              <div class="captured-pieces" id="whiteCaptured"></div>
+              <div class="material-advantage" id="whiteMaterial">+0</div>
+            </div>
+            <div class="captured-section black-captured">
+              <div class="section-header">Black</div>
+              <div class="captured-pieces" id="blackCaptured"></div>
+              <div class="material-advantage" id="blackMaterial">+0</div>
+            </div>
+          </div>
+          <div class="panel info-panel">
+            <h3 class="panel-title">Game</h3>
+            <div class="info-item">
+              <span class="info-label">Time</span>
+              <span class="info-value" id="gameTime">00:00</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Position</span>
+              <button class="share-btn" id="shareBtn">Copy FEN</button>
+            </div>
+          </div>
+          <div class="panel history-panel">
+            <h3 class="panel-title">Move History</h3>
+            <div class="move-history" id="moveHistory">
+              <div class="history-placeholder">
+                <p>No moves yet</p>
+                <p class="placeholder-subtext">Start playing to see history</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="promotion-overlay" id="promotionModal" style="display: none">
+      <div class="promotion-box">
+        <div class="promotion-title">Promote Pawn</div>
+        <div class="promotion-options" id="promotionOptions"></div>
+      </div>
+    </div>
+
+    <div class="game-over-banner" id="gameOverBanner" style="display: none">
+      <div class="game-over-card">
+        <div class="result-icon" id="resultIcon">&#127942;</div>
+        <div class="result-title" id="resultTitle">CHECKMATE!</div>
+        <div class="result-subtitle" id="resultSubtitle">White Wins</div>
+        <div class="game-stats">
+          <div class="stat-item">
+            <span class="stat-label">Moves</span>
+            <span class="stat-value" id="finalMoveCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Time</span>
+            <span class="stat-value" id="finalTime">00:00</span>
+          </div>
+        </div>
+        <div class="game-over-actions">
+          <button class="action-btn primary" id="newGameBtnBanner">
+            New Game
+          </button>
+          <button class="action-btn secondary" id="reviewBtn">Review</button>
+          <button class="action-btn tertiary" id="shareResultBtn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-overlay" id="settingsModal" style="display: none">
+      <div class="settings-box">
+        <div class="settings-title">Settings</div>
+        <div class="setting-item">
+          <span class="setting-label">Sound Effects</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="soundToggle" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">Auto-save</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="autosaveToggle" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">Show Coordinates</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="coordsToggle" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <button class="close-settings-btn" id="closeSettingsBtn">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
